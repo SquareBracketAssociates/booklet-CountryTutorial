@@ -9,10 +9,10 @@ In this tutorial, we will take a concrete approach to teach you some Pharo code.
 ### Resources
 
 This tutorial uses the following resources: 
-- The Roassal visualization engine. [Roassal](https://github.com/pharo-graphics/Roassal) - (See https://github.com/pharo-graphics/Roassal).
+- The Roassal visualization engine. [Roassal](https://github.com/pharo-graphics/Roassal) - (See https://github.com/pharo-graphics/Roassal ).
 - An XML parser [XML Parser](https://github.com/pharo-contributions/XML-XMLParser) - (See https://github.com/pharo-contributions/XML-XMLParser).
 - A file `world.svg`. This SVG file defines country shapes as shown in Figure *@svgrendered@*. You can find this file at https://github.com/SquareBracketAssociates/booklet-CountryTutorial/.
-- The Spec UI builder that supports the definition of user interface. [Spec book](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/releases) - (see https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/).
+- The Spec UI builder that supports the definition of user interface. [Spec book](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/releases) - (see https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/ ).
 
 
 ### Roassal first script
@@ -45,13 +45,13 @@ c
 Now we are ready to display countries. The idea is that we will copy the SVG path definition from the world.svg file into a little Roassal program that renders SVG paths. 
 
 - Check file world.svg, open it with a text editor.
-- Copy the path of a country that you want to display, pick a little country it will help you.
+- Copy the path of a country that you want to display, pick a little country that will help you.
 
 ![World.svg rendered. %anchor=svgrendered](figures/world.png)
 
 ### SVG shapes
 
-Now we will display the SVG path you selected. In the following snippet we put 
+Now we will display the SVG path you selected. In the following snippet, we put 
 
 Inspect the following code snippet: it produces a little bezier surface.
 ```
@@ -89,10 +89,10 @@ c
 
 ### Loading an XML Parser
 So far it was fun but too manual.
-We will use an XML parser. In addition we will represent each country as an object that we can manipulate later. 
+We will use an XML parser. In addition, we will represent each country as an object that we can manipulate later. 
 
 Check if the XMLParser is loaded in your image. Else you can 
-load the XML parser available at `https://github.com/pharo-contributions/XML-XMLParser`
+load the XML parser available at `https://github.com/pharo-contributions/XML-XMLParser`.
 
 ```
 Metacello new
@@ -110,7 +110,7 @@ Using the following snippet, inspect the tree returned by the parser.
 ```
 
 Dabble the data and find the list of countries. You can see this in Figure *@xml@*.
-It shows that the field `'nodes'` contains a collection that contains one collection that finally 
+It shows that the field `'nodes'` contains another collection that contains one collection that finally 
 contains a list of elements. 
 
 
@@ -132,7 +132,7 @@ Object << #EarthMapCountry
 ### Define methods
 
 - Define the corresponding accessors.
-- Define a method that creates an instance of `EarthMapCountry` from an element. 
+- Define the method named `fromXML:`  that creates an instance of `EarthMapCountry` from an XML element. 
 
 ```
 EarthMapCountry >> fromXML: aXMLElement
@@ -142,7 +142,7 @@ EarthMapCountry >> fromXML: aXMLElement
 	code := aXMLElement attributeAt: 'id'.
 ```
 
-- Define a method that returns the Roassal SVG shape of a country
+- Define the method, `asRSShape` that returns the Roassal SVG shape of a country.
 
 ```
 EarthMapCountry >> asRSShape
@@ -185,6 +185,7 @@ Then you can see a list of countries as shown in Figure *@dry@*.
 
 
 ### Empowering developers in action
+
 Ok we see the list of objects in the inspector. 
 but we can do better, we want to see __in__ the inspector the shape of the country.
 For this, we define the following method that extends the inspector. 
@@ -221,6 +222,8 @@ You can enhance the `printOn:` method to display the country code.
 ### Introduce the World 
 
 We used the following snippet of code but this is a bit brittle.  
+
+
 ```
 | col |
 col := OrderedCollection new. 
@@ -302,19 +305,20 @@ EarthMap new
 
 ### A little note about our process
 
-We defined the previous methods one by one. Notice that we could have started from the original code snippet, turn it into a method and apply multiple extract methods and other refactorings. 
+We defined the previous methods one by one. Notice that we could have started from the original code snippet, turn it into a method, and apply multiple extract methods and other refactorings. 
 
 
 
 
 
 ### Grabbing flags from flagcdn
+
 We are ready to work on a country browser displaying its name, flag, and shape. 
-The first thing is to get a flag. For this we will use the [https://flagcdn.com/](https://flagcdn.com/)
+The first thing is to get a flag. For this, we will use the [https://flagcdn.com/](https://flagcdn.com/)
 
 
-The following script gives you the principle to get a flag in png from the web.
-Adapt it to get the flag of the country of your choice. Notice that the `<code>` is expected in lowercase (i.e. fr and not FR). 
+The following script gives you the principle to get a flag in PNG from the web.
+Adapt it to get the flag of the country of your choice. Notice that the `<code>` is expected in lowercase (i.e., fr and not FR). 
 
 ```
 | request pngArray |
@@ -347,8 +351,8 @@ SpPresenterWithModel << #EarthCountryBrowser
 ```
 
 The instance variables are:
-- `countryList` is a presenter of the list of country names. It is a drop list presenter.
-- `countryCode` is a presenter to display the country code such as FR or CH. It is a input field presenter.
+- `countryList` is a presenter of the list of country names. It is a drop-list presenter.
+- `countryCode` is a presenter to display the country code such as FR or CH. It is an input field presenter.
 - `countryFlag` is a presenter for the flag. It is an image presenter. 
 - map is an instance of the class `EarthMap`.
 
