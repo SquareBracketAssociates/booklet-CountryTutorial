@@ -9,10 +9,10 @@ In this tutorial, we will take a concrete approach to teach you some Pharo code.
 ### Resources
 
 This tutorial uses the following resources: 
-- The Roassal visualization engine. [Roassal @ https://github.com/pharo-graphics/Roassal ](https://github.com/pharo-graphics/Roassal).
-- An XML parser [XML Parser @ https://github.com/pharo-contributions/XML-XMLParser ](https://github.com/pharo-contributions/XML-XMLParser).
-- A file `world.svg`. This SVG file defines country shapes as shown in Figure *@svgrendered@*.
-- The Spec UI builder that supports the definition of user interface. [Spec book @https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/releases ](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/releases).
+- The Roassal visualization engine. [Roassal](https://github.com/pharo-graphics/Roassal) - (See https://github.com/pharo-graphics/Roassal).
+- An XML parser [XML Parser](https://github.com/pharo-contributions/XML-XMLParser) - (See https://github.com/pharo-contributions/XML-XMLParser).
+- A file `world.svg`. This SVG file defines country shapes as shown in Figure *@svgrendered@*. You can find this file at https://github.com/SquareBracketAssociates/booklet-CountryTutorial/.
+- The Spec UI builder that supports the definition of user interface. [Spec book](https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/releases) - (see https://github.com/SquareBracketAssociates/BuildingApplicationWithSpec2/).
 
 
 ### Roassal first script
@@ -42,7 +42,7 @@ c
 
 ### World map
 
-Now we are ready to display countries. The idea is that we will copy the SVG path definition from the world.svh file into a little Roassal program that renders SVG paths. 
+Now we are ready to display countries. The idea is that we will copy the SVG path definition from the world.svg file into a little Roassal program that renders SVG paths. 
 
 - Check file world.svg, open it with a text editor.
 - Copy the path of a country that you want to display, pick a little country it will help you.
@@ -70,7 +70,7 @@ You should obtain a not-really exciting graphical form.
 
 ### Display a country
 
-Using the path defined in the world.svg file taking, for example, the path of France you should get the Figure *@france@*.
+Using the path defined in the world.svg file taking, for example, the path of France you should get Figure *@france@*.
 
 
 ```
