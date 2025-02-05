@@ -1,4 +1,4 @@
-## A simple network simulator
+## A simple network simulator with payload
 @ch:lan
 
 In this chapter, we will develop a simulator for a computer network, from scratch, step by step. The program starts with a simplistic model of a computer network, made of objects that represent different parts of a local network such as packets, nodes, links, workstations, and hubs.

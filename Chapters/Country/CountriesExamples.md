@@ -288,7 +288,8 @@ EarthMap >> openPopulatedCanvas
 	self populatedCanvas open
 ```
 
-Now we are ready to get a map and display it. 
+You have now all the pieces to define the method \ct{importCountriesFrom:} that loads an xml file and 
+populate the map with country objects.  Once you define it you should get ready to get a map and display it. 
 The following snippet returns a map with filed-up countries and opens a Roassal canvas displaying all the countries. 
 
 ```
