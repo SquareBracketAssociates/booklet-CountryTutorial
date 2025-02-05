@@ -247,6 +247,7 @@ Object << #EarthMap
 ```
 
 We initialize the `countries` instance variable to an `OrderedCollection`.
+Define an accessor. 
 
 ```
 EarthMap >> initialize
@@ -347,7 +348,7 @@ First we define a new class `EarthCountryBrowser`. It inherits from the class `S
 
 ```
 SpPresenterWithModel << #EarthCountryBrowser
-	slots: { #countryList . #countryCode . #countryFlag  };
+	slots: { #countryList . #countryCode . #countryFlag };
 	package: 'EarthTutorial'
 ```
 
@@ -355,11 +356,14 @@ The instance variables are:
 - `countryList` is a presenter of the list of country names. It is a drop-list presenter.
 - `countryCode` is a presenter to display the country code such as FR or CH. It is an input field presenter.
 - `countryFlag` is a presenter for the flag. It is an image presenter. 
-- map is an instance of the class `EarthMap`.
 
 #### Initialize sub components.
 
 With the method `initializePresenters`, we initialize the different presenters that compose our interface. 
+Note that the expression `self model` is given by the superclass `SpPresenterWithModel`.
+The model is automatically set using the message \ct{on:} as shown below in expression 
+\ct{(EarthCountryBrowser on: ...}.
+In our scenario the model is an instance of the class \ct{EarthMap}.
 
 ```
 EarthCountryBrowser >> initializePresenters
@@ -426,7 +430,7 @@ EarthCountryBrowser >> flagForCountryCode: astring
 	^ BorderedMorph new asForm
 ```
 
-Once this done we can know define the method `onCountrySelected:`
+Once this is done, we can now define the method `onCountrySelected:`
 that will display the country code and the flag. We concatenate some spaces in front of the country code so that it looks better on the screen. 
 
 
