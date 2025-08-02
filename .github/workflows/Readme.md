@@ -9,9 +9,9 @@ name: Book with Pillar
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   schedule:
     - cron:  '0 0 * * 0'
 
