@@ -192,7 +192,7 @@ For this, we define the following method that extends the inspector.
 You should get the situation shown by Figure *@noprint@*.
 
 ```
-EarthMapCountry >> inspectorShape
+EarthMapCountry >> inspectorShape: aBuilder
 	<inspectorPresentationOrder: 0 title: 'Shape'>
 	
 	| canvas |
@@ -455,6 +455,14 @@ We let as an exercise the display of the roassal visualization.
 For this you can add a new component to the browser and initialize it to `newRoassal`. 
 The message `newRoassal` creates an instance of the class `SpRoassalPresenter`. 
 You specify set and get the canvas (using the messages `canvas` and `canvas:`) to be displayed. 
+
+
+At this point you are missing `showFlag:` method. A possible implementation is the following one. 
+
+```
+EarthCountryBrowser >> showFlag: code
+  countryFlag image: (self flagForCountryCode: code)
+```
 
 
 ### Conclusion
