@@ -3,7 +3,7 @@
 This project is about building a tool that reports information about a class.
 
 
-## How to provide the project results
+### How to provide the project results
 
 - Github: The project should be published on a GitHub account
 - The project should load executing expressions such as the following one taken from the project [https://github.com/pharo-containers/Containers-Stack/](https://github.com/pharo-containers/Containers-Stack/)
@@ -22,7 +22,7 @@ and examples in Pharo itself: `BaselineOf` subclasses.
 - The report should be generated using the Microdown `MicMicrodownTextualBuilder`: 
 it means that the tool should not explicitly manipulate strings!
 
-## What the student will learn
+### What the student will learn
 
 - Meta programming: manipulating classes, methods as objects
 - Basic software engineer metric computation
@@ -34,7 +34,7 @@ It should be noted that not all functionalities have to be placed inside the sam
 The Documentor class may delegate analysis to separate classes.
 
 
-## First version: minimal
+### First version: minimal
 
 The first version should report
 - Class name
@@ -46,12 +46,13 @@ The first version should report
 
 '
 OrderedCollection 
-- a subclass of SequencesableCollection - has the following fields: #array  #firstIndex  #lastIndex ;
+- a subclass of SequencesableCollection 
+- has the following fields: #array #firstIndex  #lastIndex ;
 - in defined in package 'Collections-Sequenceable'
-'                                
+'
 ```
 
-## Second version: default
+### Second version: default
 
 Second version should report
 - the first paragraph of the class comment
@@ -60,7 +61,7 @@ Second version should report
 
 You can get inspiration from the class `ClassHierarchyPrinter`
 
-## Third version: metrics
+### Third version: metrics
 
 This version should include metrics that characterize the class.
 
@@ -72,7 +73,7 @@ This version should include metrics that characterize the class.
 - How many methods invoke super methods. 
 - List method names that are overly long
 
-## Fourth version: mini Linter
+### Fourth version: mini Linter
 
 Some methods has flaws, strange behavior or characteristics
 Using a visitor (check the chapters 1 and 2 of [https://github.com/SquareBracketAssociates/Booklet-FunWithInterpreters/releases/download/latest/index.pdf](https://github.com/SquareBracketAssociates/Booklet-FunWithInterpreters/releases/download/latest/index.pdf)
@@ -80,7 +81,7 @@ Using a visitor (check the chapters 1 and 2 of [https://github.com/SquareBracket
 Report methods that: 
 - do not access instance variables directly (from within the method itself)
 - do not access self nor instance variables
-- compute cyclomatic complexity of a method (number of conditional expressions (`ifTrue:`, `whileTrue:`) and  
+- compute cyclomatic complexity of a method (number of conditional expressions (`ifTrue:`, `whileTrue:`) and 
 sum up such metrics at the class level.
 
 

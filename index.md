@@ -14,3 +14,4 @@ S. Ducasse
 <!inputFile|path=Chapters/PayloadLAN/PayloadLAN.md!>
 
 <!inputFile|path=Chapters/Sketches/Sketches.md!>
+<!inputFile|path=Chapters/Sketches/Documentor.md!>
